@@ -1,4 +1,4 @@
-# NIKL-KLUE
+# NIKL-GLUE
 
 ## pretrained model & data  
 need extract inside each task folder  
