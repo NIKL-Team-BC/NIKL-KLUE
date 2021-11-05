@@ -43,7 +43,7 @@ dependencies:
     - tokenizers==0.10.3
     - torch==1.10.0
     - tqdm==4.62.3
-    - transformers==4.12.3
+    - transformers==3.5.1
     - typing-extensions==3.10.0.2
     - urllib3==1.26.7
 prefix: /home/ssm/anaconda3/envs/nikl

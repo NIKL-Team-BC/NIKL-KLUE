@@ -1,0 +1,13 @@
+cd BoolQ
+python inference.py
+cd ..
+cd Cola
+python inference.py
+cd ..
+cd Copa
+python inference.py
+cd ..
+cd WIC
+python inference.py
+cd ..
+python make_submission.py
