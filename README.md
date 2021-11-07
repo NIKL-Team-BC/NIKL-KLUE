@@ -7,11 +7,11 @@ copa : https://drive.google.com/file/d/1PxwwOiYxKb7PUBVByX0LYwnXm9IY6lfh/view?us
 cola : https://drive.google.com/file/d/1SqFO4E2M1qIIJHusubUb5r2dklLdvlME/view?usp=sharing  
 wic : https://drive.google.com/file/d/1DJDch9YquGUrf9GSEJR4X0ecrSAdUbS/view?usp=sharing 
 
-## Docker inference  
+## Docker inference-gpu
 1. make docker image  
 docker build -t inference-docker -f Dockerfile .  
 2. run docker container  
-docker run -v "$PWD:/mnt/work" -it inference-docker  
+docker run --gpus all -v "$PWD:/mnt/work" -it inference-docker  
 3. do inference  
 sh all_inference.sh  
 

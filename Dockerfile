@@ -1,28 +1,18 @@
-# FROM conda/miniconda3
-# VOLUME ["/mnt/c/Users/mello/workspace/NIKL/NIKL-KLUE" "/root/work"]
+FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-devel
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install wget -y
+RUN apt-get install -y git
 
-# WORKDIR /root/work
+# install pip
+RUN apt install -y python3-pip
+RUN apt-get install -y python3-setuptools
+RUN pip install --upgrade pip
 
-# COPY conda_requirements.txt .
-# COPY requirements.txt .
-# RUN pip install -r requirements.txt
+COPY requirements.txt . 
 
-# # RUN conda create --name test python=3.8 -y
-# # RUN conda env create -f conda_requirements.txt
-
-# RUN python submit_copa/inference.py
-
-
-FROM jupyter/scipy-notebook
-# FROM conda/miniconda3
-
-COPY requirements.txt .
+# install python package
 RUN pip install -r requirements.txt
-
-# COPY Copa/inference.py ./Copa/inference.py
-
-# RUN python3 Copa/inference.py
-# VOLUME [".", "/mnt/work"]
 WORKDIR /mnt/work
 
-CMD ["/bin/bash"]
+RUN echo 'build is completed'
