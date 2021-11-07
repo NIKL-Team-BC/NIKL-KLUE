@@ -149,17 +149,29 @@ def extract_moonjong_logit(model_path, data_path, tokenizer, device):
 
 
 def extract_seokmin_logit(args, device):
+    # load tokenizer
+    #   TOK_NAME = "bert-base-multilingual-cased"
     TOK_NAME = args.pretrained_model
     tokenizer = AutoTokenizer.from_pretrained(TOK_NAME)
 
+    # saved_args = args
+    # saved_args = torch.load(os.path.join(args.model_dir, "training_args.bin"))
+    # load my model
+    # model_module = getattr(import_module("model"), args.model_type)
+
+    # load test datset
+    # test_dataset_dir = "/content/drive/MyDrive/NIKL/NIKL_BoolQ_py/data/SKT_BoolQ_Test.tsv"
+    # test_dataset_dir = "/content/drive/MyDrive/NIKL/NIKL_BoolQ_py/data/SKT_BoolQ_Dev.tsv"
     dataset = load_test_data("./cola_data_results/data/NIKL_CoLA_test.tsv")
     test_Dataset = convert_test_to_features(dataset, tokenizer, max_len=150)
-
+    # test_label = dataset['label'].values
+    # tokenized_test = tokenized_dataset(dataset, tokenizer)
+    # test_dataset = CustomDataset(tokenized_test, test_label)
 
     # print(len(test_datase t))
     if len(args.model_dirs) > 1:
         for i, model_dir in enumerate(args.model_dirs, 1):
-            model = Electra.from_pretrained(model_dir)
+            model = Electra.from_pretrained(model_dir)  # args 기존으로 돌리려면 빼줘야 함
             model.to(device)
             model.eval()
 
@@ -180,7 +192,8 @@ def extract_seokmin_logit(args, device):
 
 
 
-    # predict answer
+        # predict answer
+    # make csv file with predicted answer
     preds = np.array([[1 - pred, pred] for pred in preds])
     a = 0
 
@@ -209,7 +222,7 @@ if __name__ == '__main__':
 
 
     device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
-    data_path = './test_data/NIKL_CoLA_test.tsv'
+    data_path = './cola_data_results/data/NIKL_CoLA_test.tsv'
     tunib_tokenizer = AutoTokenizer.from_pretrained('tunib/electra-ko-base')
 
     moonjong_model_path = './cola_data_results/moonjong/moonjong_cola.pt'
