@@ -79,13 +79,16 @@ def train(model_dir, args):
   # load model and tokenizerƒ
   MODEL_NAME = args.pretrained_model
   tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+  if MODEL_NAME == "bert-base-uncased":
+    tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
 
   # load dataset
-  train_dataset = load_data("./cola_data_results/data/NIKL_CoLA_train_All.tsv")
-  val_dataset = load_data("./cola_data_results/data/NIKL_CoLA_dev.tsv")
+  train_dataset = load_data("./data/NIKL_CoLA_train_All.tsv")
+  val_dataset = load_data("./data/NIKL_CoLA_dev.tsv")
+  # test_dataset = load_data("/content/drive/MyDrive/NIKL/NIKL_WiC/Data/NIKL_SKT_WiC_Dev.tsv")
 
   # train eval split 20% k-fold (5)
-  datasets_ = load_data("./cola_data_results/data/NIKL_CoLA_train_All.tsv")
+  datasets_ = load_data("./data/NIKL_CoLA_train_All.tsv")
   labels_ = datasets_["label"]
   length = len(labels_)
   kf = args.kfold # 1
@@ -126,7 +129,10 @@ def train(model_dir, args):
   )
 
   # setting model hyperparameter
-  config_module = getattr(import_module("transformers"), args.model_type + "Config")
+  if args.model_type == 'Electra_BoolQ':
+    config_module = getattr(import_module("transformers"), "ElectraConfig")
+  else:
+    config_module = getattr(import_module("transformers"), args.model_type + "Config")
   
   model_config = config_module.from_pretrained(MODEL_NAME)
   model_config.num_labels = 2
@@ -290,6 +296,8 @@ if __name__ == '__main__':
 
   parser.add_argument('--criterion', type=str, default='cross_entropy', help='criterion type (default: cross_entropy)')
   parser.add_argument('--optimizer', type=str, default='AdamW', help='optimizer type (default: AdamW)')
+  
+  # SWA !!!, layernorm에 weight decay 없이 하기
   parser.add_argument('--lr', type=float, default=1e-6)
   parser.add_argument('--weight_decay', type=float, default=0.01)
   parser.add_argument('--warmup_steps', type=int, default=500)               # number of warmup steps for learning rate scheduler
@@ -298,7 +306,7 @@ if __name__ == '__main__':
   parser.add_argument('--kfold', type=int, default=1, help='k-fold currunt step number')
 
   parser.add_argument('--name', default='exp', help='model save at {SM_MODEL_DIR}/{name}')
-  parser.add_argument('--model_dir', type=str, default=os.environ.get('SM_MODEL_DIR', './cola_data_results/results'))
+  parser.add_argument('--model_dir', type=str, default=os.environ.get('SM_MODEL_DIR', './results'))
   parser.add_argument('--wandb', default=False, help='Use wandb : True, False')
   parser.add_argument('--custompretrain', type=str, default="", help='Use custom pretrain : model dir')
 
@@ -306,6 +314,23 @@ if __name__ == '__main__':
 
 
   args.epochs = 30
+  args.optimizer = 'AdamW'
+  args.pretrained_model = "xlm-roberta-large"
+  args.model_type = "XLMRoberta"
+  args.criterion = 'cross_entropy'
+  args.freeze_epoch = 0
+  args.dropout_rate = 0.2
+  # args.weight_decay = 0
+
+  # args.model_type = "Electra_BoolQ"
+  # args.pretrained_model = "monologg/koelectra-base-v3-discriminator"
+  # args.lr = 7e-5
+  # args.batch_size = 32
+
+  # args.model_type = "Roberta"
+  # args.pretrained_model = "klue/roberta-large"
+  # args.lr = 2e-6
+  # args.batch_size = 32
   args.model_type = "Electra"
   args.pretrained_model = "monologg/koelectra-base-v3-discriminator"
   args.lr = 4e-6
