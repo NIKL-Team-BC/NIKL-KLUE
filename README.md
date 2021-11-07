@@ -14,3 +14,6 @@ docker build -t inference-docker -f Dockerfile .
 docker run -v "$PWD:/mnt/work" -it inference-docker  
 3. do inference  
 sh all_inference.sh  
+
+## Presentation PDF
+https://github.com/NIKL-Team-BC/NIKL-KLUE/blob/main/2021_NIKL_Team_BC.pdf
