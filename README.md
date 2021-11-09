@@ -2,8 +2,8 @@
 
 ## pretrained model & data  
 need extract inside each task folder  
-boolq : https://drive.google.com/file/d/1k-6W3bTqFVlSBBtsJ42kPcBdBCO7bQkD/view?usp=sharing  
-copa : https://drive.google.com/file/d/1PxwwOiYxKb7PUBVByX0LYwnXm9IY6lfh/view?usp=sharing  
+boolq : https://drive.google.com/file/d/1GBViK4o6Fm0L83zl9Atv2J2wdxvBnQV4/view?usp=sharing  
+copa : https://drive.google.com/file/d/1QB66EebwWP2XhgZFweG00NIu3QIBZ-hh/view?usp=sharing  
 cola : https://drive.google.com/file/d/1SqFO4E2M1qIIJHusubUb5r2dklLdvlME/view?usp=sharing  
 wic : https://drive.google.com/file/d/1DUaUTTl-YAwhZQmTHaLVHsPmA64dyQ75/view?usp=sharing
 
