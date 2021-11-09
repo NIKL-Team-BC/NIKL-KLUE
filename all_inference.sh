@@ -10,7 +10,7 @@ tar -xvf copa_data_results.tar
 python inference.py
 cd ..
 cd WIC
-gdown https://drive.google.com/uc?id=12P_4-yxo0x9I32HFWFu_OCGbA-EJakK0
+gdown https://drive.google.com/uc?id=1DUaUTTl-YAwhZQmTHaLVHsPmA64dyQ75
 tar -xvf wic_model.tar
 python inference.py
 cd ..
