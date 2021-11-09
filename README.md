@@ -8,7 +8,7 @@ cola : https://drive.google.com/file/d/1SqFO4E2M1qIIJHusubUb5r2dklLdvlME/view?us
 wic : https://drive.google.com/drive/folders/1Jj-AgW7w608gwwrBFUujiv104huK3zLl?usp=sharing
 
 ## Docker inference  
-If you have a gpu, run it on a gpu-inference branch  
+If you have a gpu, run it on a gpu-inference branch and see the branch gpu-inference readme  
 1. make docker image  
 docker build -t inference-docker -f Dockerfile .  
 2. run docker container  
