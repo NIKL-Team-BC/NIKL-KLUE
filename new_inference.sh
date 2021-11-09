@@ -1,13 +1,13 @@
 cd BoolQ
 pip install transformers
-gdown https://drive.google.com/uc?id=1k-6W3bTqFVlSBBtsJ42kPcBdBCO7bQkD
+gdown https://drive.google.com/uc?id=1GBViK4o6Fm0L83zl9Atv2J2wdxvBnQV4
 tar -xvf boolq_data_results.tar
 cp ../new_test/BoolQ.tsv ./boolq_data_results/data/SKT_BoolQ_Test.tsv
 python inference.py
 cd ..
 
 cd Copa
-gdown https://drive.google.com/uc?id=1PxwwOiYxKb7PUBVByX0LYwnXm9IY6lfh
+gdown https://drive.google.com/uc?id=1QB66EebwWP2XhgZFweG00NIu3QIBZ-hh
 tar -xvf copa_data_results.tar
 cp ../new_test/CoPA.tsv ./copa_data_results/data/SKT_COPA_Test.tsv
 python inference.py
