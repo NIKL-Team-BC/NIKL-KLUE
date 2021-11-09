@@ -22,7 +22,7 @@ cd ..
 
 cd Cola
 pip install transformers==3.5.1
-gdown https://drive.google.com/uc?id=1thXqYuEW0xdZZhOqq_fS9EyJCDQlYhli
+gdown https://drive.google.com/uc?id=1d-eIMrLZSxreeiE-vcO6lX5hjF70c6zS
 unzip cola_dataset_results.zip
 cp ../new_test/CoLA.tsv ./cola_data_results/data/NIKL_CoLA_test.tsv
 python inference.py
