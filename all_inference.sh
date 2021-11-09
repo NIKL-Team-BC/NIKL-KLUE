@@ -16,7 +16,7 @@ python inference.py
 cd ..
 cd Cola
 pip install transformers==3.5.1
-gdown https://drive.google.com/uc?id=1SqFO4E2M1qIIJHusubUb5r2dklLdvlME
+gdown https://drive.google.com/uc?id=1thXqYuEW0xdZZhOqq_fS9EyJCDQlYhli
 unzip cola_dataset_results.zip
 python inference.py
 cd ..
