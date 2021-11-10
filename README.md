@@ -32,7 +32,7 @@ wic : https://drive.google.com/file/d/1Rm1J6vYpZ09OTOVBBC0Un-gFTpcSoAch/view?usp
 3. 도커 이미지를 run한다  
  run 명령어: docker run -v "$PWD:/mnt/work" -it inference-docker  
 
-4. 새로운 테스트셋(대회에서 주어진 testset)으로 inference를 할 때에는 데이터를 new_test 디렉토리에 다음과 같이 넣어준다  
+4. 새로운 테스트셋(새로운 평가 testset)으로 inference를 할 때에는 데이터를 new_test 디렉토리에 다음과 같이 넣어준다  
  new_test/BoolQ.tsv  
  new_test/CoLA.tsv  
  new_test/WiC.tsv  
