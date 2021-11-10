@@ -18,6 +18,5 @@ sacremoses==0.0.46
 six==1.16.0
 tokenizers==0.9.3
 tqdm==4.62.3
-transformers==3.5.1
 typing-extensions==3.10.0.2
 urllib3==1.26.7
