@@ -19,7 +19,7 @@ cd ..
 
 cd WIC
 if [ ! -f ./wic_model.tar ]; then
-    gdown https://drive.google.com/uc?id=1DUaUTTl-YAwhZQmTHaLVHsPmA64dyQ75
+    gdown https://drive.google.com/uc?id=1Rm1J6vYpZ09OTOVBBC0Un-gFTpcSoAch
 fi
 tar -xvf wic_model.tar
 cp ../new_test/WiC.tsv ./Data/NIKL_SKT_WiC_Test.tsv
