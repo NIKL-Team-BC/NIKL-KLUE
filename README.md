@@ -17,7 +17,7 @@ wic : https://drive.google.com/file/d/1Rm1J6vYpZ09OTOVBBC0Un-gFTpcSoAch/view?usp
  빌드 명령어: docker build -t inference-docker -f Dockerfile .  
 
 3. 도커 이미지를 run한다  
- run 명령어: docker run -v "$PWD:/mnt/work" -it inference-docker  
+ run 명령어: docker run --gpus all -v "$PWD:/mnt/work" -it inference-docker  
 
 4. 기존 테스트셋(대회에서 주어진 testset)으로 inference를 할 때에는 all_inference.sh를 실행한다.  
  실행 명령어: sh all_inference.sh  
