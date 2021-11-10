@@ -1,5 +1,7 @@
 cd BoolQ
-gdown https://drive.google.com/uc?id=1GBViK4o6Fm0L83zl9Atv2J2wdxvBnQV4
+if [ ! -f ./boolq_data_results.tar ]; then
+    gdown https://drive.google.com/uc?id=1OZaN9qVNFlEbk7GIpaoREcEObLttibFk
+fi
 tar -xvf boolq_data_results.tar
 python inference.py
 cd ..
@@ -9,12 +11,16 @@ unzip cola_dataset_results.zip
 python inference.py
 cd ..
 cd Copa
-gdown https://drive.google.com/uc?id=1QB66EebwWP2XhgZFweG00NIu3QIBZ-hh
+if [ ! -f ./copa_data_results.tar ]; then
+    gdown https://drive.google.com/uc?id=1QB66EebwWP2XhgZFweG00NIu3QIBZ-hh
+fi
 tar -xvf copa_data_results.tar
 python inference.py
 cd ..
 cd WIC
-gdown https://drive.google.com/uc?id=1DUaUTTl-YAwhZQmTHaLVHsPmA64dyQ75
+if [ ! -f ./wic_model.tar ]; then
+    gdown https://drive.google.com/uc?id=1DUaUTTl-YAwhZQmTHaLVHsPmA64dyQ75
+fi
 tar -xvf wic_model.tar
 python inference.py
 cd ..
