@@ -279,6 +279,7 @@ if __name__ == '__main__':
     test_Dataset = convert_sentence_to_features(test_dataset, tokenizer, max_len= 280, mode='eval')
 
     n_fold = 5
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     for fold in tqdm(range(n_fold)):
         config = AutoConfig.from_pretrained(
@@ -290,7 +291,7 @@ if __name__ == '__main__':
                 config= config, 
                 dropout_rate = 0.1
             )
-        model.load_state_dict(torch.load('./rbt_model'+str(fold)+'/pytorch_model.bin'))
+        model.load_state_dict(torch.load('./rbt_model'+str(fold)+'/pytorch_model.bin', map_location=device))
         model.eval()
         result = test_pred(test_Dataset, eval_batch_size, model)
         result.to_csv(str(fold)+'_rbt_result.csv', index=False)
@@ -323,5 +324,5 @@ if __name__ == '__main__':
         else:
             submission_json["wic"].append({"idx" : i, "label" : False})
 
-    with open('./softvoting_fold_rbt_result.json', 'w') as fp:
+    with open('./submission.json', 'w') as fp:
         json.dump(submission_json, fp)
