@@ -79,7 +79,7 @@ def extract_dohoon_logit(model_path, data_path, tokenizer, device):
 
     submission_data = testDataset(test_data, tokenizer, max_len=100)
     model = ElectraForSequenceClassification.from_pretrained('tunib/electra-ko-base')
-    model.load_state_dict(torch.load(model_path))
+    model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
 
     sampler = SequentialSampler(submission_data)
@@ -104,7 +104,7 @@ def extract_dohoon_logit(model_path, data_path, tokenizer, device):
 
 
 def extract_moonjong_logit(model_path, data_path, tokenizer, device):
-    checkpoint = torch.load(model_path)
+    checkpoint = torch.load(model_path, map_location=device)
     config = AutoConfig.from_pretrained(
         'tunib/electra-ko-base',
         num_labels=2
@@ -123,7 +123,7 @@ def extract_moonjong_logit(model_path, data_path, tokenizer, device):
     preds = None
     model.eval()
     for batch in tqdm(test_dataloader, desc="Predicting"):
-        batch = tuple(batch[t].to("cuda:0") for t in batch)
+        batch = tuple(batch[t].to(device) for t in batch)
         with torch.no_grad():
             inputs = {
                 "input_ids": batch[0],
@@ -221,7 +221,7 @@ if __name__ == '__main__':
     print(args)
 
 
-    device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     data_path = './cola_data_results/data/NIKL_CoLA_test.tsv'
     tunib_tokenizer = AutoTokenizer.from_pretrained('tunib/electra-ko-base')
 
