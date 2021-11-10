@@ -29,4 +29,3 @@ unzip cola_dataset_results.zip
 python inference.py
 cd ..
 python make_submission.py
-https://drive.google.com/file/d/1Rm1J6vYpZ09OTOVBBC0Un-gFTpcSoAch/view
