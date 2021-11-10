@@ -1,5 +1,5 @@
 cd BoolQ
-pip install transformers
+pip install transformers==4.12.2
 if [ ! -f ./boolq_data_results.tar ]; then
     wget https://storage.googleapis.com/nikl/boolq_data_results.tar
 fi
