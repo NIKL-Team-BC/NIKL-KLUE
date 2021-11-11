@@ -26,10 +26,12 @@
  run 명령어: docker run -v "$PWD:/mnt/work" -it inference-docker  
 
 4. 새로운 테스트셋(새로운 평가 testset)으로 inference를 할 때에는 데이터를 new_test 디렉토리에 다음과 같이 넣어줍니다
+
  new_test/BoolQ.tsv  
  new_test/CoLA.tsv  
  new_test/WiC.tsv  
  new_test/CoPA.tsv  
+ 
 주의: 반드시 new_test 디렉토리 내부에서 위에 명시된 파일 명과 같이 추가해주세요!
 
 5. new_inference.sh를 실행한다.  
