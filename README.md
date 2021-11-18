@@ -1,41 +1,31 @@
-# NIKL-GLUE
+# NIKL-KLUE
 
-## 평가방법
-### CPU inference를 권장드립니다
+본 레퍼지토리는 국립국어원에서 열린 [인공 지능 언어 능력 평가](https://corpus.korean.go.kr/task/taskLeaderBoard.do?taskId=4&clCd=ING_TASK&subMenuId=sub04)에서 문화체육관광부 장관상을 받은 자료입니다. 
 
-### 기존 테스트셋으로 inference를 할 때
-1. 본 repository를 clone합니다
+![image-20211118180339167](C:\Users\choco\AppData\Roaming\Typora\typora-user-images\image-20211118180339167.png)
 
-2. 도커 이미지를 빌드합니다
- 빌드 명령어: docker build -t inference-docker -f Dockerfile .  
 
-3. 도커 이미지를 run합니다
- run 명령어: docker run -v "$PWD:/mnt/work" -it inference-docker  
 
-4. 기존 테스트셋(대회에서 주어진 testset)으로 inference를 할 때에는 all_inference.sh를 실행합니다 
- 실행 명령어: sh all_inference.sh  
+## 팀원
 
-### 새로운 테스트셋(평가set)으로 inference할 때  
+| [김강민](https://github.com/Gangsss)                         | [김현우](https://github.com/choco9966)                       | [이동빈](https://github.com/Dongbin-Lee-git)                 | [신문종](https://github.com/moon-jong)                       | [서석민](https://github.com/min1321)                         | [임도훈](https://github.com/vail131)                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="./img/Team_BC_김강민.jpg" width="10000" height="150"> | <img src="./img/Team_BC_김현우.png" width="10000" height="150"> | <img src="./img/Team_BC_이동빈.png" width="10000" height="150"> | <img src="./img/Team_BC_신문종.jpg" width="10000" height="150"> | <img src="./img/Team_BC_서석민.jpeg" width="10000" height="150"> | <img src="./img/Team_BC_임도훈.jpg" width="10000" height="150"> |
 
-1. 본 repository를 clone합니다
 
-2. 도커를 빌드합니다 **주의사항 : 다시 재빌드 하지 않고 실행시 오류가 발생할 수 있습니다 재 빌드 해주세요!!**   
- 빌드 명령어: docker build -t inference-docker -f Dockerfile .  
 
-3. 도커 이미지를 run합니다
- run 명령어: docker run -v "$PWD:/mnt/work" -it inference-docker  
+## 솔루션 
 
-4. 새로운 테스트셋(새로운 평가 testset)으로 inference를 할 때에는 데이터를 new_test 디렉토리에 다음과 같이 넣어줍니다
 
-   new_test/BoolQ.tsv  
-   new_test/CoLA.tsv  
-   new_test/WiC.tsv  
-   new_test/CoPA.tsv  
- 
-   **주의: 반드시 new_test 디렉토리 내부에서 위에 명시된 파일 명과 같이 추가해주세요!**
 
-5. new_inference.sh를 실행한다.  
- 실행 명령어: sh new_inference.sh  
+## 가중치 파일
+
+- boolq : https://drive.google.com/file/d/1k-6W3bTqFVlSBBtsJ42kPcBdBCO7bQkD/view?usp=sharing  
+- copa : https://drive.google.com/file/d/1PxwwOiYxKb7PUBVByX0LYwnXm9IY6lfh/view?usp=sharing  
+- cola : https://drive.google.com/file/d/1SqFO4E2M1qIIJHusubUb5r2dklLdvlME/view?usp=sharing  
+- wic : https://drive.google.com/drive/folders/1Jj-AgW7w608gwwrBFUujiv104huK3zLl?usp=sharing
+
+
 
 ## Presentation PDF
 https://github.com/NIKL-Team-BC/NIKL-KLUE/blob/main/2021_NIKL_Team_BC.pdf  
