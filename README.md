@@ -42,12 +42,6 @@
 
 
 
-## Inference 방법 
-
-
-
-
-
 ## 가중치 파일
 
 - COPA: https://drive.google.com/file/d/1PxwwOiYxKb7PUBVByX0LYwnXm9IY6lfh/view?usp=sharing  
