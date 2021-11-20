@@ -1,4 +1,4 @@
-# NIKL-KLUE
+# NIKL-GLUE
 
 본 레퍼지토리는 국립국어원에서 열린 [인공 지능 언어 능력 평가](https://corpus.korean.go.kr/task/taskLeaderBoard.do?taskId=4&clCd=ING_TASK&subMenuId=sub04)에서 문화체육관광부 장관상을 받은 자료입니다. 
 
