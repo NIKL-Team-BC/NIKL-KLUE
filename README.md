@@ -4,6 +4,8 @@
 
 ![image-20211118180339167](./Img/Leaderboard.png)
 
+- 보도자료: https://www.korean.go.kr/front/board/boardStandardView.do;front=7D48564152C68FA141641D716C10D86D?board_id=6&b_seq=868&mn_id=184
+
 
 
 ## 팀원
@@ -22,14 +24,38 @@
 
 
 
+## COLA
+
+![image-20211118193702430](./Img/COLA.png)
+
+
+
+## WIC 
+
+![image-20211118193702430](./Img/WIC.png)
+
+
+
+## BoolQ
+
+![image-20211118193702430](./Img/BoolQ.png)
+
+
+
+## Inference 방법 
+
+
+
+
+
 ## 가중치 파일
 
-- boolq : https://drive.google.com/file/d/1k-6W3bTqFVlSBBtsJ42kPcBdBCO7bQkD/view?usp=sharing  
-- copa : https://drive.google.com/file/d/1PxwwOiYxKb7PUBVByX0LYwnXm9IY6lfh/view?usp=sharing  
-- cola : https://drive.google.com/file/d/1SqFO4E2M1qIIJHusubUb5r2dklLdvlME/view?usp=sharing  
-- wic : https://drive.google.com/drive/folders/1Jj-AgW7w608gwwrBFUujiv104huK3zLl?usp=sharing
+- COPA: https://drive.google.com/file/d/1PxwwOiYxKb7PUBVByX0LYwnXm9IY6lfh/view?usp=sharing  
+- COLA : https://drive.google.com/file/d/1SqFO4E2M1qIIJHusubUb5r2dklLdvlME/view?usp=sharing  
+- WIC: https://drive.google.com/drive/folders/1Jj-AgW7w608gwwrBFUujiv104huK3zLl?usp=sharing
+- BoolQ: https://drive.google.com/file/d/1k-6W3bTqFVlSBBtsJ42kPcBdBCO7bQkD/view?usp=sharing  
 
 
 
 ## Presentation PDF
-https://github.com/NIKL-Team-BC/NIKL-KLUE/blob/main/2021_NIKL_Team_BC.pdf  
+- https://github.com/NIKL-Team-BC/NIKL-KLUE/blob/main/2021_NIKL_Team_BC.pdf  
