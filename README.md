@@ -26,19 +26,19 @@
 
 ## COLA
 
-![image-20211118193702430](./Img/COLA.png)
+![image-20211118193702430](./Img/COLA.PNG)
 
 
 
 ## WIC 
 
-![image-20211118193702430](./Img/WIC.png)
+![image-20211118193702430](./Img/WIC.PNG)
 
 
 
 ## BoolQ
 
-![image-20211118193702430](./Img/BoolQ.png)
+![image-20211118193702430](./Img/BoolQ.PNG)
 
 
 
